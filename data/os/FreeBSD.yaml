@@ -1,0 +1,7 @@
+---
+openldap::server_package: 'openldap-server'
+openldap::server_service: 'slapd'
+openldap::conf_d: '/usr/local/etc/openldap/slapd.d'
+openldap::ssl_d: '/usr/local/etc/openldap/ssl'
+openldap::user: 'ldap'
+openldap::group: 'ldap'
