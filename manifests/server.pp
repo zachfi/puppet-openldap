@@ -5,7 +5,6 @@
 class openldap::server (
   String $server_package,
   String $server_service,
-  String $utils_package,
   String $conf_d,
   String $ssl_d,
   String $user,
@@ -13,16 +12,10 @@ class openldap::server (
   $ca_cert_source   = undef,
   $ldap_cert_source = undef,
   $ldap_key_source  = undef,
-) inherits openldap::params {
+) {
 
   package { $server_package:
     ensure => installed,
-  }
-
-  if $utils_package {
-    package { $utils_package:
-      ensure => installed,
-    }
   }
 
   service { $server_service:
@@ -60,6 +53,7 @@ class openldap::server (
     owner   => $user,
     group   => $group,
     mode    => '0750',
+    recurse => true,
     notify  => Service[$server_service],
     require => Package[$server_package],
   }
@@ -70,7 +64,6 @@ class openldap::server (
     group  => '0',
     mode   => '0750',
   }
-
 
   # SSL Certs
   #
