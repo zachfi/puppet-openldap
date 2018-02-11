@@ -1,6 +1,6 @@
 {
   "name": "zleslie-openldap",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "author": "zleslie",
   "summary": "OpenLDAP Module",
   "license": "Apache-2.0",
@@ -25,7 +25,6 @@
       "operatingsystem": "FreeBSD",
       "operatingsystemrelease": [
         "10.3"
-
       ]
     }
   ],
@@ -36,6 +35,9 @@
     }
   ],
   "dependencies": [
-    {"name":"puppetlabs/stdlib","version_requirement":">= 4.6.0 < 6.0.0"}
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.6.0 < 6.0.0"
+    }
   ]
 }
