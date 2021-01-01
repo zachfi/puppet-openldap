@@ -13,7 +13,6 @@ class openldap::server (
   $ldap_cert_source = undef,
   $ldap_key_source  = undef,
 ) {
-
   package { $server_package:
     ensure => installed,
   }
@@ -31,7 +30,6 @@ class openldap::server (
   #
   # Resources that require the openldap user account need to require
   # the Package['slapd'] resource.
-
 
   # All slapd configuration is managed using ldif which means we
   # don't have the traditional /etc/ldap/slapd.conf.  All configuration
@@ -102,4 +100,3 @@ class openldap::server (
     }
   }
 }
-
